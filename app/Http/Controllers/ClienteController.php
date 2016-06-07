@@ -58,4 +58,8 @@ class ClienteController extends Controller
 
         $cliente->save();
     }
+
+    public function delete($id)
+    {
+    }
 }

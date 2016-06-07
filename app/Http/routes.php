@@ -1,5 +1,6 @@
 <?php
 
+// Clientes
 Route::group(['prefix' => 'cliente'], function(){
 
     Route::get('/', [
@@ -16,8 +17,37 @@ Route::group(['prefix' => 'cliente'], function(){
         'uses' => 'ClienteController@update',
         'as' => 'cliente_update'
     ])->where('id','[0-9]+');
+
+    Route::get('/delete', [
+        'uses' => 'ClienteController@delete',
+        'as' => 'cliente_delete'
+    ]);
+
+    Route::get('/delete/{id}', [
+        'uses' => 'ClienteController@delete',
+        'as' => 'cliente_delete'
+    ]);
+
 });
 
+// Veiculos
+Route::group(['prefix' => 'veiculo'], function(){
+
+    Route::get('/', [
+        'uses' => 'VeiculoController@index',
+        'as' => 'veiculo_index'
+    ]);
+
+    Route::match(['get','post'], '/create', [
+        'uses' => 'VeiculoController@create',
+        'as' => 'veiculo_create'
+    ]);
+
+    Route::match(['get','post'], '/{id}', [
+        'uses' => 'VeiculoController@update',
+        'as' => 'veiculo_update'
+    ])->where('id','[0-9]+');
+});
 
 
 /*
