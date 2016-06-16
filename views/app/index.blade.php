@@ -1,4 +1,4 @@
-@extends('sb.layout')
+@extends('app.layout')
 
 @section('content')
 

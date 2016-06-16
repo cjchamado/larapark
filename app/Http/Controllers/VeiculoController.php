@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Veiculo;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,11 @@ class VeiculoController extends Controller
 
         if($request->isMethod('get')){
 
+            $clientes = Cliente::all();
+
             return view('veiculo.form', [
-                'veiculo' => $veiculo
+                'veiculo' => $veiculo,
+                'clientes' => $clientes
             ]);
         }
 

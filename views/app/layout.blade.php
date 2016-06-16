@@ -51,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('sb_admin') }}">SB Admin v2.0</a>
+            <a class="navbar-brand" href="#">SB Admin v2.0</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -296,11 +296,7 @@
             </div>
 
             <div class="row">
-
                 @yield('content')
-
-                @yield('teste')
-
             </div>
 
         </div>
