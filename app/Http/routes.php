@@ -47,29 +47,16 @@ Route::group(['prefix' => 'veiculo'], function(){
         'uses' => 'VeiculoController@update',
         'as' => 'veiculo_update'
     ])->where('id','[0-9]+');
+
+    Route::get('/delete/{id}', [
+        'uses' => 'VeiculoController@delete',
+        'as' => 'veiculo_delete'
+    ]);
 });
-
-
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app.index');
 });
-
-
-Route::get('/sb-admin/{page?}',[
-    'uses' => 'SBAdminController@index',
-    'as' => 'sb_admin'
-]);
 
 /*
 |--------------------------------------------------------------------------
